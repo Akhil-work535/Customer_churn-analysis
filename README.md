@@ -54,7 +54,7 @@ flowchart LR
 ```
 
 ---
-## Model performance:
+## Modeling & evaluation:
  
 | Model | Accuracy | Recall | Precision | F1 | ROC-AUC |
 |--------|-----------|----------|------------|-----------|---------|
@@ -62,3 +62,44 @@ flowchart LR
 | Random Forest | 0.78 | 0.50 | 0.62 | 0.55 | 0.82 |
 | Gradient Boosting | 0.79 | 0.49 | 0.65 | 0.56 | 0.83 |
 | RF + SMOTE | 0.76 | 0.74 | 0.53 | 0.62 | 0.84 |
+
+---
+
+## Power BI Dashboard Highlights
+
+* Churn rate by contract type
+
+* Payment method vs churn
+
+* Monthly revenue vs tenure
+
+* Feature importance summary
+
+---
+## Key Business Insights
+
+* Month-to-month customers are 3x more likely to churn.
+
+* Electronic check payments have highest churn correlation.
+
+* Long-term contracts improve retention by ~15%.
+  
+* Targeted offers can reduce churn by 10–15%.
+
+---
+## Tech Stack
+
+Python | pandas | numpy | scikit-learn | seaborn | matplotlib | Power BI
+
+## Business Analytics Extension
+
+* RFM segmentation for customer value tiers.
+
+* Funnel analysis of churn stages.
+
+* KPI cards for retention and revenue loss.
+
+---
+ ## Conclusion
+
+The model provides actionable churn predictions, enabling marketing teams to target high-risk customers effectively and increase retention.
