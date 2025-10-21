@@ -1,52 +1,64 @@
-Customer Churn Prediction & Analysis
+# Customer Churn Prediction for Subscription Services
 
-This repository contains an end-to-end customer churn project built using Python and Power BI.
-It analyzes churn patterns, builds predictive models, and visualizes insights to help businesses understand why customers leave.
+## Business Problem
+Subscription-based companies often face customer churn — the loss of customers over time.  
+The marketing team currently uses a blanket retention approach, leading to unnecessary discounts for loyal customers and missed opportunities to retain at-risk users.
 
-🔹 Project Workflow
+**Goal:** Build a predictive model to identify customers likely to churn so the company can focus retention efforts effectively.
 
-Data Preprocessing
+---
 
-Handled missing values, categorical encoding, and outlier treatment.
+## Business Objectives
+1. Analyze customer demographics and service usage to identify churn drivers.  
+2. Develop a predictive model to classify customers as "Churn" or "Non-Churn".  
+3. Determine key factors influencing churn.  
+4. Visualize results for business decision-making.
 
-Feature engineering (e.g., tenure groups, contract type buckets).
+---
 
-Exploratory Data Analysis (EDA)
+##  Dataset Overview
+**Source:** [Kaggle – Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn)  
+**Rows:** ~7,000  
+**Target Variable:** `Churn` (Yes/No)
 
-Distribution of churn across tenure, payment method, contract type, and internet service.
+| Feature | Description |
+|----------|-------------|
+| Tenure | Number of months customer stayed |
+| MonthlyCharges | Monthly amount billed |
+| TotalCharges | Lifetime total billed |
+| Contract | Contract type (Month-to-Month / One-Year / Two-Year) |
+| PaymentMethod | Payment method type |
 
-Correlation heatmaps & statistical summaries.
+---
 
-Machine Learning Models
+## Data Cleaning & Preprocessing
+- Converted `TotalCharges` to numeric and filled missing values.  
+- Encoded categorical variables using LabelEncoder.  
+- Created `AvgMonthlySpend = TotalCharges / (Tenure + 1)`.  
+- Scaled numeric features using `StandardScaler`.
 
-Logistic Regression, Random Forest, XGBoost, etc.
+---
 
-Evaluated with Accuracy, Precision, Recall, F1-score, ROC-AUC.
+## Workflow
 
-Feature importance extracted for churn drivers.
+```mermaid
+flowchart LR
+    A[Raw Data] --> B[Cleaning & Encoding]
+    B --> C[EDA]
+    C --> D[Model Training]
+    D --> E[Evaluation]
+    E --> F[Feature Importance]
+    F --> G[Power BI Dashboard]
 
-Visualization (Power BI)
 
-Interactive Customer Churn Dashboard with KPIs, charts, and churn drivers.
+```
 
-Highlights: Contract type, Tenure group, Monthly charges, Payment method, Internet service.
-
-🔹 Key Insights
-
-Month-to-Month contracts → highest churn risk.
-
-Higher monthly charges → more likely to churn.
-
-Electronic Check payment method → strong churn driver.
-
-Tenure < 12 months → significantly higher churn.
-
-🔹 Tech Stack
-
-Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, XGBoost)
-
-Power BI (Interactive dashboard, DAX calculations)
-
-Jupyter Notebook for analysis
-
-Dataset: Telco Customer Churn (Kaggle)
+---
+## Model performance:
+ 
+| Model | Accuracy | Recall | Precision | F1 | ROC-AUC |
+|--------|-----------|----------|------------|-----------|---------|
+| Logistic Regression | 0.74 | 0.79 | 0.51 | 0.61 | 0.84 |
+| Random Forest | 0.78 | 0.50 | 0.62 | 0.55 | 0.82 |
+| Gradient Boosting | 0.79 | 0.49 | 0.65 | 0.56 | 0.83 |
+| RF + SMOTE | 0.76 | 0.74 | 0.53 | 0.62 | 0.84 |
