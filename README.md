@@ -1,4 +1,5 @@
 # Customer Churn Prediction for Subscription Services
+In subscription-based businesses, retaining customers is crucial for sustainable growth. This project aims to analyze customer behavior, service usage patterns, and demographic factors to predict which customers are at risk of churning. By leveraging machine learning techniques, the model helps identify potential churners early, enabling targeted retention strategies, reducing revenue loss, and improving overall customer satisfaction.
 
 ## Business Problem
 Subscription-based companies often face customer churn — the loss of customers over time.  
@@ -6,7 +7,6 @@ The marketing team currently uses a blanket retention approach, leading to unnec
 
 **Goal:** Build a predictive model to identify customers likely to churn so the company can focus retention efforts effectively.
 
----
 
 ## Business Objectives
 1. Analyze customer demographics and service usage to identify churn drivers.  
@@ -14,7 +14,7 @@ The marketing team currently uses a blanket retention approach, leading to unnec
 3. Determine key factors influencing churn.  
 4. Visualize results for business decision-making.
 
----
+
 
 ##  Dataset Overview
 **Source:** [Kaggle – Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn)  
@@ -29,7 +29,6 @@ The marketing team currently uses a blanket retention approach, leading to unnec
 | Contract | Contract type (Month-to-Month / One-Year / Two-Year) |
 | PaymentMethod | Payment method type |
 
----
 
 ## Data Cleaning & Preprocessing
 - Converted `TotalCharges` to numeric and filled missing values.  
@@ -37,7 +36,6 @@ The marketing team currently uses a blanket retention approach, leading to unnec
 - Created `AvgMonthlySpend = TotalCharges / (Tenure + 1)`.  
 - Scaled numeric features using `StandardScaler`.
 
----
 
 ## Workflow
 
@@ -53,7 +51,7 @@ flowchart LR
 
 ```
 
----
+
 ## Modeling & evaluation:
  
 | Model | Accuracy | Recall | Precision | F1 | ROC-AUC |
@@ -63,7 +61,7 @@ flowchart LR
 | Gradient Boosting | 0.79 | 0.49 | 0.65 | 0.56 | 0.83 |
 | RF + SMOTE | 0.76 | 0.74 | 0.53 | 0.62 | 0.84 |
 
----
+
 
 ## Power BI Dashboard Highlights
 
@@ -75,7 +73,7 @@ flowchart LR
 
 * Feature importance summary
 
----
+
 ## Key Business Insights
 
 * Month-to-month customers are 3x more likely to churn.
@@ -86,7 +84,7 @@ flowchart LR
   
 * Targeted offers can reduce churn by 10–15%.
 
----
+
 ## Tech Stack
 
 Python | pandas | numpy | scikit-learn | seaborn | matplotlib | Power BI
@@ -99,7 +97,6 @@ Python | pandas | numpy | scikit-learn | seaborn | matplotlib | Power BI
 
 * KPI cards for retention and revenue loss.
 
----
  ## Conclusion
 
 The model provides actionable churn predictions, enabling marketing teams to target high-risk customers effectively and increase retention.
